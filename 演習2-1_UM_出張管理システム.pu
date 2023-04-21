@@ -1,23 +1,23 @@
-@startuml 出張申請
+@startuml 課題２－１
 left to right direction
-actor 申請者#DDDDDD;line:black;line.bold;
-actor 交通費精算システム#DDDDDD;line:black;line.bold;
-actor 承認者#DDDDDD;line:black;line.bold;
-actor 経理担当者#DDDDDD;line:black;line.bold;
-rectangle 出張申請システム {
-    usecase 出張申請を登録
-    usecase 出張申請を提出
-    usecase 出張申請を承認
-    usecase 出張申請を却下
-    usecase 出張申請を差し戻す
-    usecase 出張申請を確認
+actor 申請者 as sinsei
+actor 承認者 as syounin
+actor 経理担当者 as keiri
+actor 交通費精算システム as sys
+rectangle 出張申請システム{
+usecase 出張申請を登録する as UC1
+usecase 出張申請を提出する as UC2
+usecase 出張申請を承認する as UC3
+usecase 出張申請を却下する as UC4
+usecase 出張申請を差し戻す as UC5
+usecase 出張申請を確認する as UC6
 }
-申請者--> 出張申請を登録
-出張申請を登録 <--交通費精算システム
-申請者--> 出張申請を提出
-承認者--> 出張申請を承認
-承認者--> 出張申請を却下
-承認者--> 出張申請を差し戻す
-承認者--> 出張申請を確認
-経理担当者--> 出張申請を確認
+sinsei --> UC1
+sinsei --> UC2
+syounin --> UC3
+syounin -->UC4
+syounin --> UC5
+syounin --> UC6
+keiri --> UC6
+UC1 <-- sys
 @enduml
