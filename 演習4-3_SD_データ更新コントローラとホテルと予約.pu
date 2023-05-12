@@ -1,0 +1,10 @@
+@startuml データ更新コントローラとホテルと予約
+hide footbox
+participant "<u>controller:データ更新コントローラ</u>" as control
+participant "<u>hotel:ホテル</u>" as hotel
+activate control
+    control -> hotel:予約
+    activate hotel
+        hotel -> hotel:予約オブジェクト作成
+    control <-- hotel:予約登録
+@enduml

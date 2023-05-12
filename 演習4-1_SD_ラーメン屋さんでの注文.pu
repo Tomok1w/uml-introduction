@@ -1,0 +1,23 @@
+@startuml ラーメン屋さんでの注文
+hide footbox
+    ' メッセージに自動で番号を降る
+autonumber
+    ' 厳格なUMLに準拠する
+skinparam style strictuml
+actor "<u>:客</u>" as customor
+participant "<u>:フロア店員</u>" as clerk
+participant "<u>:料理人</u>" as cook
+
+activate customor
+    customor -> clerk: ラーメンを注文する
+    activate clerk
+        clerk -> cook: 調理を指示する
+        activate cook
+            cook -> cook: 調理をする
+        clerk <-- cook: ラーメン
+        deactivate cook
+    customor <-- clerk: ラーメン
+    deactivate clerk
+deactivate customor
+
+@enduml
