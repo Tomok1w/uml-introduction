@@ -1,4 +1,4 @@
-@startuml ライトレーサー
+@startuml ライトレーサ
 left to right direction
 actor ユーザー as us
 actor 光センサー as li

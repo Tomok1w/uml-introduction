@@ -1,4 +1,4 @@
-@startuml ライントレーサー
+@startuml ライントレーサ
 left to right direction
 class ライントレーサー {
 }
